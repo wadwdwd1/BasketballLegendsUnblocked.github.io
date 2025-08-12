@@ -1,44 +1,39 @@
-<!-- Container for both ads -->
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
-
-  <!-- Left-aligned ad -->
-  <div>
-    <!-- AdForGames.com code begin -->
-    <script>
-      var afg = {};
-      afg.u = 6575;
-      afg.s = 6;
-      document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
-    </script>
-    <!-- AdForGames.com code end -->
-  </div>
-
-  <!-- Right-aligned ad -->
-  <div>
-    <!-- AdForGames.com code begin -->
-    <script>
-      var afg = {};
-      afg.u = 6575;
-      afg.s = 6;
-      document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
-    </script>
-    <!-- AdForGames.com code end -->
-  </div>
-
-</div>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Play The Game!</title>
     <style>
         body {
-            text-align: center;
+            margin: 0;
             font-family: sans-serif;
         }
+
+        .layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .ad {
+            width: 160px; /* Adjust based on ad width */
+        }
+
+        .game-container {
+            flex-grow: 1;
+            text-align: center;
+        }
+
         iframe {
-            margin: 20px auto;
+            margin: 0 auto;
             display: block;
             border: 1px solid #ccc;
+        }
+
+        #message {
+            text-align: center;
+            color: red;
+            margin-top: 20px;
         }
     </style>
     <script>
@@ -47,7 +42,7 @@
             return urlParams.get(param);
         }
 
-        window.onload = function() {
+        window.onload = function () {
             const gameUrl = getQueryParam("game");
             const iframe = document.getElementById("gameFrame");
 
@@ -61,15 +56,54 @@
     </script>
 </head>
 <body>
-    <h2>Game Viewer</h2>
-    <p id="message" style="display:none;">No game selected. Please go back and choose one.</p>
-    <iframe id="gameFrame" width="800" height="600"></iframe>
+
+    <h2 style="text-align:center;">Game Viewer</h2>
+
+    <!-- Layout container -->
+    <div class="layout">
+
+        <!-- Left Ad -->
+        <div class="ad">
+            <!-- AdForGames.com code begin -->
+            <script>
+                var afg = {};
+                afg.u = 6575;
+                afg.s = 6;
+                document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
+            </script>
+            <!-- AdForGames.com code end -->
+        </div>
+
+        <!-- Game iframe in center -->
+        <div class="game-container">
+            <p id="message" style="display:none;">No game selected. Please go back and choose one.</p>
+            <iframe id="gameFrame" width="800" height="600"></iframe>
+        </div>
+
+        <!-- Right Ad -->
+        <div class="ad">
+            <!-- AdForGames.com code begin -->
+            <script>
+                var afg = {};
+                afg.u = 6575;
+                afg.s = 6;
+                document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
+            </script>
+            <!-- AdForGames.com code end -->
+        </div>
+
+    </div>
+
+    <!-- Bottom sticky ad -->
+    <!-- AdForGames.com code begin -->
+    <script>
+        var afg = {};
+        afg.u = 6575;
+        afg.s = 31;
+        afg.anchor = "bottom";
+        document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
+    </script>
+    <!-- AdForGames.com code end -->
+
 </body>
 </html>
-
-
-<!-- AdForGames.com code begin -->
-<script>var afg={};afg.u=6575;afg.s=31;
-afg.anchor="bottom";
-document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
-<!-- AdForGames.com code end -->
